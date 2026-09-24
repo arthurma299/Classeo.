@@ -39,7 +39,7 @@ export default function CookieBanner() {
     <div
       role="dialog"
       aria-label="Préférences de cookies"
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-surface/95 px-6 py-5 backdrop-blur-md"
+      className="glass fixed inset-x-0 bottom-0 z-40 px-6 py-5"
     >
       <div className="mx-auto flex max-w-5xl flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm leading-relaxed text-ink-soft">
@@ -48,7 +48,7 @@ export default function CookieBanner() {
           notre{" "}
           <Link
             href="/politique-de-confidentialite"
-            className="font-medium text-gold-dim underline underline-offset-2"
+            className="font-medium text-accent-dim underline underline-offset-2"
           >
             politique de confidentialité
           </Link>
@@ -58,14 +58,14 @@ export default function CookieBanner() {
           <button
             type="button"
             onClick={() => choose("declined")}
-            className="rounded-md border border-border px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-gold-dim"
+            className="glass-soft rounded-full px-4 py-2 text-sm font-medium text-ink transition-colors hover:text-accent-dim"
           >
             Refuser
           </button>
           <button
             type="button"
             onClick={() => choose("accepted")}
-            className="rounded-md bg-gold px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-gold-hover"
+            className="rounded-full btn-accent px-4 py-2 text-sm font-semibold text-white transition-colors"
           >
             Accepter
           </button>

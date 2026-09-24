@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
@@ -8,9 +9,11 @@ export const metadata: Metadata = {
 
 export default function MentionsLegalesPage() {
   return (
-    <section className="px-6 py-16 md:py-24">
+    <>
+      <Breadcrumbs label="Mentions légales" />
+      <section className="px-6 py-16 md:py-24">
       <div className="mx-auto max-w-2xl">
-        <p className="mb-4 text-sm font-medium tracking-wide text-gold">
+        <p className="mb-4 text-sm font-medium tracking-wide text-accent">
           Informations légales
         </p>
         <h1 className="font-serif text-3xl font-medium text-ink md:text-4xl">
@@ -36,7 +39,7 @@ export default function MentionsLegalesPage() {
               Email de contact&nbsp;:{" "}
               <a
                 href="mailto:arthur.maurizi.automatisation@gmail.com"
-                className="text-gold-dim underline underline-offset-2"
+                className="text-accent-dim underline underline-offset-2"
               >
                 arthur.maurizi.automatisation@gmail.com
               </a>
@@ -85,7 +88,7 @@ export default function MentionsLegalesPage() {
               est détaillé dans la{" "}
               <Link
                 href="/politique-de-confidentialite"
-                className="text-gold-dim underline underline-offset-2"
+                className="text-accent-dim underline underline-offset-2"
               >
                 politique de confidentialité
               </Link>
@@ -94,6 +97,7 @@ export default function MentionsLegalesPage() {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

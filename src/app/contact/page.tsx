@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
+import SubmitButton from "@/components/SubmitButton";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -9,19 +11,23 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="px-6 pt-16 pb-20 md:pt-24">
+    <>
+      <Breadcrumbs label="Contact" />
+      <section className="px-6 pt-20 pb-24 md:pt-28">
       <div className="mx-auto max-w-xl">
         <Reveal>
-          <p className="mb-4 text-sm font-medium tracking-wide text-gold">
-            Contact
-          </p>
-          <h1 className="max-w-md font-serif text-4xl font-medium text-ink md:text-5xl">
-            Parlons de votre gestion documentaire
-          </h1>
-          <p className="mt-5 leading-relaxed text-ink-soft">
-            Décrivez-moi rapidement votre situation, je vous réponds sous
-            48h avec un retour concret — pas un discours commercial.
-          </p>
+          <div className="text-center">
+            <p className="mb-4 text-sm font-medium tracking-wide text-accent">
+              Contact
+            </p>
+            <h1 className="mx-auto max-w-md font-serif text-4xl font-medium text-ink md:text-6xl">
+              Parlons de votre gestion documentaire
+            </h1>
+            <p className="mt-5 leading-relaxed text-ink-soft">
+              Décrivez-moi rapidement votre situation, je vous réponds sous
+              48h avec un retour concret, pas un discours commercial.
+            </p>
+          </div>
         </Reveal>
 
         <Reveal delay={100}>
@@ -31,7 +37,7 @@ export default function ContactPage() {
             data-netlify="true"
             netlify-honeypot="bot-field"
             action="/merci"
-            className="mt-10 rounded-2xl border border-border bg-surface p-8 shadow-[0_1px_3px_rgba(28,25,23,0.05)]"
+            className="glass mt-10 rounded-2xl p-8"
           >
             <input type="hidden" name="form-name" value="contact" />
             <p className="hidden">
@@ -52,7 +58,7 @@ export default function ContactPage() {
                 minLength={2}
                 maxLength={100}
                 placeholder="Votre nom"
-                className="w-full rounded-md border border-border bg-surface-raised px-3.5 py-3 text-[15px] text-ink outline-none transition-shadow placeholder:text-ink-faint focus:border-gold-dim focus:ring-4 focus:ring-gold/15"
+                className="w-full rounded-md border border-border bg-surface-raised px-3.5 py-3 text-[15px] text-ink outline-none transition-shadow placeholder:text-ink-faint focus:border-accent-dim focus:ring-4 focus:ring-accent/15"
               />
             </div>
 
@@ -69,7 +75,7 @@ export default function ContactPage() {
                 type="text"
                 maxLength={100}
                 placeholder="Nom de votre entreprise (ou activité)"
-                className="w-full rounded-md border border-border bg-surface-raised px-3.5 py-3 text-[15px] text-ink outline-none transition-shadow placeholder:text-ink-faint focus:border-gold-dim focus:ring-4 focus:ring-gold/15"
+                className="w-full rounded-md border border-border bg-surface-raised px-3.5 py-3 text-[15px] text-ink outline-none transition-shadow placeholder:text-ink-faint focus:border-accent-dim focus:ring-4 focus:ring-accent/15"
               />
             </div>
 
@@ -84,7 +90,7 @@ export default function ContactPage() {
                 required
                 maxLength={200}
                 placeholder="vous@exemple.com"
-                className="w-full rounded-md border border-border bg-surface-raised px-3.5 py-3 text-[15px] text-ink outline-none transition-shadow placeholder:text-ink-faint focus:border-gold-dim focus:ring-4 focus:ring-gold/15"
+                className="w-full rounded-md border border-border bg-surface-raised px-3.5 py-3 text-[15px] text-ink outline-none transition-shadow placeholder:text-ink-faint focus:border-accent-dim focus:ring-4 focus:ring-accent/15"
               />
             </div>
 
@@ -103,18 +109,13 @@ export default function ContactPage() {
                 minLength={10}
                 maxLength={2000}
                 placeholder="Quelques mots sur votre situation documentaire actuelle..."
-                className="w-full resize-y rounded-md border border-border bg-surface-raised px-3.5 py-3 text-[15px] text-ink outline-none transition-shadow placeholder:text-ink-faint focus:border-gold-dim focus:ring-4 focus:ring-gold/15"
+                className="w-full resize-y rounded-md border border-border bg-surface-raised px-3.5 py-3 text-[15px] text-ink outline-none transition-shadow placeholder:text-ink-faint focus:border-accent-dim focus:ring-4 focus:ring-accent/15"
               />
             </div>
 
             <div data-netlify-recaptcha="true" className="mb-6" />
 
-            <button
-              type="submit"
-              className="inline-flex items-center justify-center rounded-md bg-gold px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-gold-hover hover:shadow-lg"
-            >
-              Envoyer
-            </button>
+            <SubmitButton />
           </form>
         </Reveal>
 
@@ -125,6 +126,7 @@ export default function ContactPage() {
           </p>
         </Reveal>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

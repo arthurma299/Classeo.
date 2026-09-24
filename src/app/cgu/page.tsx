@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Conditions générales d'utilisation",
@@ -9,9 +10,11 @@ export const metadata: Metadata = {
 
 export default function CguPage() {
   return (
-    <section className="px-6 py-16 md:py-24">
+    <>
+      <Breadcrumbs label="CGU" />
+      <section className="px-6 py-16 md:py-24">
       <div className="mx-auto max-w-2xl">
-        <p className="mb-4 text-sm font-medium tracking-wide text-gold">
+        <p className="mb-4 text-sm font-medium tracking-wide text-accent">
           Conditions
         </p>
         <h1 className="font-serif text-3xl font-medium text-ink md:text-4xl">
@@ -117,7 +120,7 @@ export default function CguPage() {
             <p className="mt-3">
               Pour toute question relative aux présentes CGU, vous pouvez
               utiliser le{" "}
-              <Link href="/contact" className="text-gold-dim underline underline-offset-2">
+              <Link href="/contact" className="text-accent-dim underline underline-offset-2">
                 formulaire de contact
               </Link>{" "}
               du Site.
@@ -125,6 +128,7 @@ export default function CguPage() {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

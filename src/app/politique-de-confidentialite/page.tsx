@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
@@ -8,9 +9,11 @@ export const metadata: Metadata = {
 
 export default function PolitiqueConfidentialitePage() {
   return (
-    <section className="px-6 py-16 md:py-24">
+    <>
+      <Breadcrumbs label="Politique de confidentialité" />
+      <section className="px-6 py-16 md:py-24">
       <div className="mx-auto max-w-2xl">
-        <p className="mb-4 text-sm font-medium tracking-wide text-gold">
+        <p className="mb-4 text-sm font-medium tracking-wide text-accent">
           Confidentialité
         </p>
         <h1 className="font-serif text-3xl font-medium text-ink md:text-4xl">
@@ -33,7 +36,7 @@ export default function PolitiqueConfidentialitePage() {
               écrire à{" "}
               <a
                 href="mailto:arthur.maurizi.automatisation@gmail.com"
-                className="text-gold-dim underline underline-offset-2"
+                className="text-accent-dim underline underline-offset-2"
               >
                 arthur.maurizi.automatisation@gmail.com
               </a>
@@ -53,7 +56,8 @@ export default function PolitiqueConfidentialitePage() {
               mesure d&apos;audience respectueux de la vie privée (de type
               Plausible, sans cookie ni identifiant publicitaire) est activé,
               seules des statistiques agrégées et anonymes de fréquentation
-              sont produites — aucune donnée individuelle n&apos;est stockée.
+              sont produites, sans qu&apos;aucune donnée individuelle ne soit
+              stockée.
             </p>
           </div>
 
@@ -111,7 +115,7 @@ export default function PolitiqueConfidentialitePage() {
               ces droits à tout moment en écrivant à{" "}
               <a
                 href="mailto:arthur.maurizi.automatisation@gmail.com"
-                className="text-gold-dim underline underline-offset-2"
+                className="text-accent-dim underline underline-offset-2"
               >
                 arthur.maurizi.automatisation@gmail.com
               </a>
@@ -134,6 +138,7 @@ export default function PolitiqueConfidentialitePage() {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

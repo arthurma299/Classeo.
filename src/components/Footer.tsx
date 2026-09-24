@@ -21,7 +21,7 @@ export default function Footer() {
         <div className="flex flex-wrap items-start justify-between gap-8">
           <div>
             <p className="font-serif text-lg font-semibold text-ink">
-              Classeo<span className="text-gold">.</span>
+              Classeo<span className="text-accent">.</span>
             </p>
             <p className="mt-2 max-w-[32ch] text-sm text-ink-faint">
               Automatisation documentaire pour indépendants, artisans et petites entreprises.
@@ -33,7 +33,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-ink-soft transition-colors hover:text-gold"
+                className="text-sm text-ink-soft transition-colors hover:text-accent"
               >
                 {link.label}
               </Link>
@@ -50,7 +50,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs text-ink-faint transition-colors hover:text-gold"
+                className="text-xs text-ink-faint transition-colors hover:text-accent"
               >
                 {link.label}
               </Link>
